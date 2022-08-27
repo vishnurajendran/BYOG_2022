@@ -66,7 +66,7 @@ public class GameSystem : MonoBehaviour
     void ShowPhrase(string phrase)
     {
         otherText.text = "";
-        textAnimator.AnimateText(otherText, phrase,0.05f, onComplete:ActivateInputField);
+        textAnimator.AnimateText(otherText, phrase,0.05f, phraseID == currQuestion.phrases.Count - 1 ? ActivateInputField : null);
         AddToLog(string.Format(otherDudeLog, Application.platform, phrase));
     }
 
@@ -80,6 +80,8 @@ public class GameSystem : MonoBehaviour
 
     private void OnSubmit(string text)
     {
+        if(!keyboardActive)
+            return;
         inputField.DeactivateInputField();
         keyFaker.enabled = false;
         keyboardActive = false;
@@ -117,6 +119,11 @@ public class GameSystem : MonoBehaviour
                 StopCoroutine(logOpenRoutine);
 
             logOpenRoutine = StartCoroutine(LerpLogPanel(showLog));
+        }
+
+        if (Input.GetKeyDown(KeyCode.Return))
+        {
+            NextPhrase();
         }
     }
 
