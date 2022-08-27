@@ -5,6 +5,8 @@ using UnityEngine.UI;
 
 public class GameSystem : MonoBehaviour
 {
+    public List<Question> questionList;
+    public List<string> failSafeResponseList;
     const int leftOffset = -765;
 
     const string otherDudeLog = "{0}: {1}\n";
@@ -25,17 +27,34 @@ public class GameSystem : MonoBehaviour
     public System.Action<string> OnUserSubmittedAnswer;
 
     bool keyboardActive;
+    private int questionID;
+    private int phraseID = -1;
+    private Question currQuestion;
 
     Coroutine logOpenRoutine;
 
-    private void Test()
+    public void NextPhrase()
     {
-        AskQuestion("Is the world green? but I know that you are dumb :P");
+        phraseID++;
+        if (phraseID == currQuestion.phrases.Count)
+        {
+            NextQuestion();
+        }
+        
+        ShowPhrase(currQuestion.phrases[phraseID]);
+    }
+
+    void NextQuestion() 
+    {
+        questionID++;
+        currQuestion = questionList[questionID];
+        phraseID = 0;
     }
 
     // Start is called before the first frame update
     private void Start()
     {
+        currQuestion = questionList[questionID];
         inputField.onSubmit.AddListener(OnSubmit);
     }
 
@@ -44,12 +63,11 @@ public class GameSystem : MonoBehaviour
         liknessMeter.SetPerc(perc);
     }
 
-    public void AskQuestion(string question)
+    void ShowPhrase(string phrase)
     {
-        
         otherText.text = "";
-        textAnimator.AnimateText(otherText, question,0.05f, onComplete:ActivateInputField);
-        AddToLog(string.Format(otherDudeLog, Application.platform, question));
+        textAnimator.AnimateText(otherText, phrase,0.05f, onComplete:ActivateInputField);
+        AddToLog(string.Format(otherDudeLog, Application.platform, phrase));
     }
 
     private void ActivateInputField()
@@ -69,6 +87,7 @@ public class GameSystem : MonoBehaviour
         inputField.text = "";
         AddToLog(string.Format(myDudeLog, Application.platform, text));
         SetLikenessMeter(Random.Range(0, 1f));
+        NextPhrase();
     }
 
     private void AddToLog(string str)
