@@ -1252,7 +1252,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: ssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: b802978bd8e43e346bc7f01b868d6c64, type: 2}
   m_sharedMaterial: {fileID: -4814365446687430403, guid: b802978bd8e43e346bc7f01b868d6c64,
@@ -2858,7 +2858,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 25}
-  m_SizeDelta: {x: 392.211, y: 50}
+  m_SizeDelta: {x: 573.472, y: 50}
   m_Pivot: {x: 0, y: 0}
 --- !u!114 &1899320728
 MonoBehaviour:
@@ -2880,7 +2880,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Human Likeness 100%
+  m_text: 'Human Likeness: 100%'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: b802978bd8e43e346bc7f01b868d6c64, type: 2}
   m_sharedMaterial: {fileID: -4814365446687430403, guid: b802978bd8e43e346bc7f01b868d6c64,
