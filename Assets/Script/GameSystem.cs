@@ -21,12 +21,14 @@ public class GameSystem : MonoBehaviour
     [SerializeField] HorizontalLayoutGroup layoutGroup;
     [SerializeField] TMPro.TMP_Text log;
 
+    [SerializeField] GameObject continuePrompt;
+
     bool showLog;
     
 
     public System.Action<string> OnUserSubmittedAnswer;
 
-    bool keyboardActive;
+    [SerializeField] bool keyboardActive;
     private int questionID;
     private int phraseID = -1;
     private Question currQuestion;
@@ -56,6 +58,7 @@ public class GameSystem : MonoBehaviour
     {
         currQuestion = questionList[questionID];
         inputField.onSubmit.AddListener(OnSubmit);
+        NextPhrase();
     }
 
     public void SetLikenessMeter(float perc)
@@ -63,10 +66,21 @@ public class GameSystem : MonoBehaviour
         liknessMeter.SetPerc(perc);
     }
 
+    private void HideContinuePrompt()
+    {
+        continuePrompt.SetActive(false);
+    }
+
+    private void ShowContinuePrompt()
+    {
+        continuePrompt.SetActive(true);
+    }
+
     void ShowPhrase(string phrase)
     {
+        HideContinuePrompt();
         otherText.text = "";
-        textAnimator.AnimateText(otherText, phrase,0.05f, phraseID == currQuestion.phrases.Count - 1 ? ActivateInputField : null);
+        textAnimator.AnimateText(otherText, phrase,0.05f, phraseID == currQuestion.phrases.Count - 1 ? ActivateInputField : ShowContinuePrompt);
         AddToLog(string.Format(otherDudeLog, Application.platform, phrase));
     }
 
@@ -80,9 +94,10 @@ public class GameSystem : MonoBehaviour
 
     private void OnSubmit(string text)
     {
-        if(!keyboardActive)
-            return;
         inputField.DeactivateInputField();
+        inputField.ReleaseSelection();
+        if (!keyboardActive)
+            return;
         keyFaker.enabled = false;
         keyboardActive = false;
         OnUserSubmittedAnswer?.Invoke(text);
@@ -121,7 +136,7 @@ public class GameSystem : MonoBehaviour
             logOpenRoutine = StartCoroutine(LerpLogPanel(showLog));
         }
 
-        if (Input.GetKeyDown(KeyCode.Return))
+        if (Input.GetKeyDown(KeyCode.Return) && !keyboardActive)
         {
             NextPhrase();
         }
