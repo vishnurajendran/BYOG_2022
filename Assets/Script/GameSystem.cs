@@ -1,11 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GameSystem : MonoBehaviour
 {
-    const string otherDudeLog = "{0}:{1}";
-    const string myDudeLog = "{0}:{1}";
+    const int leftOffset = -765;
+
+    const string otherDudeLog = "{0}: {1}\n";
+    const string myDudeLog = "{0}: {1}\n";
 
     [SerializeField] KeyFaker keyFaker;
     [SerializeField] HumanLikenessMeter liknessMeter;
@@ -13,11 +16,17 @@ public class GameSystem : MonoBehaviour
     [SerializeField] TMPro.TMP_Text otherText;
     [SerializeField] TMPro.TMP_InputField inputField;
 
-    string log;
+    [SerializeField] HorizontalLayoutGroup layoutGroup;
+    [SerializeField] TMPro.TMP_Text log;
+
+    bool showLog;
+    
 
     public System.Action<string> OnUserSubmittedAnswer;
 
     bool keyboardActive;
+
+    Coroutine logOpenRoutine;
 
     private void Test()
     {
@@ -28,7 +37,6 @@ public class GameSystem : MonoBehaviour
     private void Start()
     {
         inputField.onSubmit.AddListener(OnSubmit);
-        Test();
     }
 
     public void SetLikenessMeter(float perc)
@@ -38,8 +46,10 @@ public class GameSystem : MonoBehaviour
 
     public void AskQuestion(string question)
     {
+        
         otherText.text = "";
         textAnimator.AnimateText(otherText, question,0.05f, onComplete:ActivateInputField);
+        AddToLog(string.Format(otherDudeLog, Application.platform, question));
     }
 
     private void ActivateInputField()
@@ -57,9 +67,14 @@ public class GameSystem : MonoBehaviour
         keyboardActive = false;
         OnUserSubmittedAnswer?.Invoke(text);
         inputField.text = "";
-
+        AddToLog(string.Format(myDudeLog, Application.platform, text));
         SetLikenessMeter(Random.Range(0, 1f));
-        Test();
+    }
+
+    private void AddToLog(string str)
+    {
+        log.text += str + "\n";
+        LayoutRebuilder.MarkLayoutForRebuild(log.GetComponent<RectTransform>());
     }
 
     private void Update()
@@ -73,6 +88,31 @@ public class GameSystem : MonoBehaviour
         if(!keyboardActive && inputField.IsActive())
         {
             inputField.DeactivateInputField();
+        }
+
+        if (Input.GetKeyDown(KeyCode.Tab))
+        {
+            Debug.Log("Opening Log");
+            showLog = !showLog;
+            if (logOpenRoutine != null)
+                StopCoroutine(logOpenRoutine);
+
+            logOpenRoutine = StartCoroutine(LerpLogPanel(showLog));
+        }
+    }
+
+    private IEnumerator LerpLogPanel(bool show)
+    {
+        float timeStep = 0;
+        int leftPadding = layoutGroup.padding.left;
+        float newVal = show ? leftOffset : 0;
+        
+        while(timeStep <= 1)
+        {
+            timeStep += Time.deltaTime / 0.15f;
+            layoutGroup.padding.left = (int)Mathf.Lerp(leftPadding, newVal, timeStep);
+            LayoutRebuilder.MarkLayoutForRebuild(layoutGroup.GetComponent<RectTransform>());    
+            yield return new WaitForEndOfFrame();
         }
     }
 }
