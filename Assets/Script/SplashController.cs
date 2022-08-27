@@ -19,6 +19,7 @@ public class SplashController : MonoBehaviour
     Coroutine routine;
     void Start()
     {
+        bootSequenceText = bootSequenceText.Replace("2015", "2022");
         bootSequenceText = bootSequenceText.Replace("[  OK  ]", "[ <color=green>OK</color> ]");
         bootSequenceText = bootSequenceText.Replace("[FAILED]", "[ <color=red>FAILED</color> ]");
         bootSequenceList = new List<string>();

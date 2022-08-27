@@ -94,6 +94,9 @@ public class MenuController : MonoBehaviour
 
     public void Exit()
     {
-        Application.Quit();
+        titleAnimator.Animate("Goodbye :)", rickRoll: false, onComplete: () =>
+        {
+            Application.Quit();
+        });
     }
 }
