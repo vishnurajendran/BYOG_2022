@@ -177,7 +177,7 @@ GameObject:
   - component: {fileID: 149206249}
   - component: {fileID: 149206248}
   m_Layer: 5
-  m_Name: continue_prompt
+  m_Name: continue_prompt_
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3164,7 +3164,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -33.003, y: -250}
+  m_AnchoredPosition: {x: -33.00299, y: -250}
   m_SizeDelta: {x: 444.931, y: 50}
   m_Pivot: {x: 1, y: 1}
 --- !u!114 &1955322219
