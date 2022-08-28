@@ -27,7 +27,7 @@ public class GameSystem : MonoBehaviour
     [SerializeField] GameObject continuePrompt;
 
     bool showLog;
-    
+    bool textAnimating = false;
 
     public System.Action<string> OnUserSubmittedAnswer;
 
@@ -121,7 +121,17 @@ public class GameSystem : MonoBehaviour
     {
         HideContinuePrompt();
         otherText.text = "";
-        textAnimator.AnimateText(otherText, phrase,0.05f, phraseID == currQuestion.phrases.Count - 1 ? ActivateInputField : ShowContinuePrompt);
+        textAnimating = true;
+
+        textAnimator.AnimateText(otherText, phrase,0.05f, ()=> {
+
+            textAnimating = false;
+            if (phraseID == currQuestion.phrases.Count - 1)
+                ActivateInputField();
+            else
+                ShowContinuePrompt();
+        });
+
         AddToLog(string.Format(otherDudeLog, Application.platform, phrase));
     }
 
@@ -180,7 +190,7 @@ public class GameSystem : MonoBehaviour
             logOpenRoutine = StartCoroutine(LerpLogPanel(showLog));
         }
 
-        if (Input.GetKeyDown(KeyCode.E) && !keyboardActive)
+        if (Input.GetKeyDown(KeyCode.E) && !keyboardActive && !textAnimating)
         {
             NextPhrase();
         }
