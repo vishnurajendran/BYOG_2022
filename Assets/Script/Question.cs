@@ -7,7 +7,6 @@ using UnityEngine;
 public class Question
 {
     public List<string> phrases;
-    [Obsolete] public string flawlessAnswer;
     public List<WeightedResponse> expectedKeyWords;
     public List<WeightedResponse> unexpectedKeyWords;
 
@@ -21,6 +20,7 @@ public class Question
     public void Init(Oxford op)
     {
         oxford = op;
+        List<string> temp = new();
         foreach (var weightedResponse in expectedKeyWords)
         {
             foreach (var word in weightedResponse.forThisWeight)
@@ -30,12 +30,14 @@ public class Question
                 {
                     if (!weightedResponse.forThisWeight.Contains(possibleSyn))
                     {
-                        weightedResponse.forThisWeight.Add(possibleSyn);
+                        temp.Add(possibleSyn);
                     }
                 }
             }
+            weightedResponse.forThisWeight.AddRange(temp);
         }
-        
+
+        temp = new();
         foreach (var weightedResponse in unexpectedKeyWords)
         {
             foreach (var word in weightedResponse.forThisWeight)
@@ -45,10 +47,11 @@ public class Question
                 {
                     if (!weightedResponse.forThisWeight.Contains(possibleSyn))
                     {
-                        weightedResponse.forThisWeight.Add(possibleSyn);
+                        temp.Add(possibleSyn);
                     }
                 }
             }
+            weightedResponse.forThisWeight.AddRange(temp);
         }
     }
     public bool DoesItExistInExpected(string wordToCheck, out float weight, out bool isGibberish)

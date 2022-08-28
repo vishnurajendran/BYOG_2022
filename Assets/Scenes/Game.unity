@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028305, g: 0.22571313, b: 0.3069213, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -2749,7 +2749,6 @@ MonoBehaviour:
     - I'm Art vandalay, Head of Machine Intelligence Audit And Regulation
     - Nice to meet you
     - How are you doing today?
-    flawlessAnswer: I'm fine
     expectedKeyWords:
     - Weight: 0.6
       forThisWeight:
@@ -2762,9 +2761,7 @@ MonoBehaviour:
       - I
       - Self
       - im
-    unexpectedKeyWords:
-    - Weight: 0.6
-      forThisWeight: []
+    unexpectedKeyWords: []
     questionThreadA: 2
     questionThreadB: 1
     questionThreadC: 1
@@ -2775,7 +2772,6 @@ MonoBehaviour:
     - Please try to keep the conversation in english
     - Lets continue with a simpler question,
     - Batman or Superman ?
-    flawlessAnswer: 
     expectedKeyWords: []
     unexpectedKeyWords: []
     questionThreadA: -1
@@ -2785,8 +2781,10 @@ MonoBehaviour:
     oxford: {fileID: 0}
   - phrases:
     - Whats your name
-    flawlessAnswer: Ava
-    expectedKeyWords: []
+    expectedKeyWords:
+    - Weight: 1
+      forThisWeight:
+      - ava
     unexpectedKeyWords: []
     questionThreadA: 4
     questionThreadB: 3
@@ -2797,8 +2795,10 @@ MonoBehaviour:
     - Sorry, thats not the data i have with me
     - I'll repeat myself
     - Whats your name
-    flawlessAnswer: Ava
-    expectedKeyWords: []
+    expectedKeyWords:
+    - Weight: 1
+      forThisWeight:
+      - ava
     unexpectedKeyWords: []
     questionThreadA: 4
     questionThreadB: 3
@@ -2807,9 +2807,33 @@ MonoBehaviour:
     oxford: {fileID: 0}
   - phrases:
     - Whats your age
-    flawlessAnswer: 18
-    expectedKeyWords: []
-    unexpectedKeyWords: []
+    expectedKeyWords:
+    - Weight: 1
+      forThisWeight:
+      - eighteen
+      - 18
+    unexpectedKeyWords:
+    - Weight: 1
+      forThisWeight:
+      - one
+      - two
+      - three
+      - four
+      - five
+      - six
+      - seven
+      - nine
+      - ten
+      - 1
+      - 2
+      - 3
+      - 4
+      - 5
+      - 6
+      - 7
+      - 8
+      - 9
+      - 10
     questionThreadA: 3
     questionThreadB: 4
     questionThreadC: 4
@@ -2819,9 +2843,33 @@ MonoBehaviour:
     - Sorry, thats not the data i have with me
     - I'll repeat myself
     - Whats your age
-    flawlessAnswer: 18
-    expectedKeyWords: []
-    unexpectedKeyWords: []
+    expectedKeyWords:
+    - Weight: 1
+      forThisWeight:
+      - eighteen
+      - 18
+    unexpectedKeyWords:
+    - Weight: 1
+      forThisWeight:
+      - one
+      - two
+      - three
+      - four
+      - five
+      - six
+      - seven
+      - nine
+      - ten
+      - 1
+      - 2
+      - 3
+      - 4
+      - 5
+      - 6
+      - 7
+      - 8
+      - 9
+      - 10
     questionThreadA: 3
     questionThreadB: 4
     questionThreadC: 4
@@ -2833,9 +2881,19 @@ MonoBehaviour:
     - No pressure, kiddo
     - For the first question,
     - Using the first words that come to your mind, describe your childhood
-    flawlessAnswer: 18
-    expectedKeyWords: []
-    unexpectedKeyWords: []
+    expectedKeyWords:
+    - Weight: 1
+      forThisWeight:
+      - happy
+      - eventful
+      - joyful
+      - joy
+    unexpectedKeyWords:
+    - Weight: 1
+      forThisWeight:
+      - traumatic
+      - sad
+      - suicidal
     questionThreadA: 7
     questionThreadB: 7
     questionThreadC: 8
@@ -2844,9 +2902,19 @@ MonoBehaviour:
   - phrases:
     - good to hear that
     - describe one happy moment
-    flawlessAnswer: 18
-    expectedKeyWords: []
-    unexpectedKeyWords: []
+    expectedKeyWords:
+    - Weight: 1
+      forThisWeight:
+      - happy
+      - eventful
+      - joyful
+      - joy
+    unexpectedKeyWords:
+    - Weight: 1
+      forThisWeight:
+      - traumatic
+      - sad
+      - suicidal
     questionThreadA: 9
     questionThreadB: 9
     questionThreadC: 8
@@ -2855,9 +2923,19 @@ MonoBehaviour:
   - phrases:
     - Sorry!, made you remember it again
     - describe one happy moment
-    flawlessAnswer: 18
-    expectedKeyWords: []
-    unexpectedKeyWords: []
+    expectedKeyWords:
+    - Weight: 1
+      forThisWeight:
+      - happy
+      - eventful
+      - joyful
+      - joy
+    unexpectedKeyWords:
+    - Weight: 1
+      forThisWeight:
+      - traumatic
+      - sad
+      - suicidal
     questionThreadA: 9
     questionThreadB: 9
     questionThreadC: 8
@@ -2865,8 +2943,20 @@ MonoBehaviour:
     oxford: {fileID: 0}
   - phrases:
     - Please describe a unicorn
-    flawlessAnswer: 18
-    expectedKeyWords: []
+    expectedKeyWords:
+    - Weight: 0.4
+      forThisWeight:
+      - horse
+      - donkey
+    - Weight: 0.4
+      forThisWeight:
+      - horn
+      - horns
+    - Weight: 0.2
+      forThisWeight:
+      - magical
+      - mythical
+      - magic
     unexpectedKeyWords: []
     questionThreadA: 8
     questionThreadB: 8
