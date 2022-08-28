@@ -1,8 +1,12 @@
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using Newtonsoft.Json;
+#if UNITY_EDITOR
+    using UnityEditor;
+#endif
 using UnityEngine;
 
 namespace AI
@@ -25,16 +29,12 @@ namespace AI
     public class Oxford : ScriptableObject
     {
         public string[] allWordsForNo;
-        public string[] allWordsForYes;
-        public string[] allWordsForPossibility;
-        public string[] articles;
-        public string[] adverbs;
 
         private Dictionary<string, List<string>> synonymDictionary;
 
         public TextAsset[] db;
 
-        [Header("For jsons")]
+        [Header("For jsons")] public string fileName;
         public SynonymList debugTransferToJson;
         [TextArea] public string outputJson;
 
@@ -47,7 +47,13 @@ namespace AI
         [ContextMenu("Copy json")]
         private void CopyToOutput()
         {
+            Debug.Log($"{Application.dataPath}");
             outputJson = JsonConvert.SerializeObject(debugTransferToJson);
+
+            File.WriteAllText($"{Application.dataPath}/AI/Sandbox/Resources/{fileName}.txt", outputJson);
+#if UNITY_EDITOR
+            AssetDatabase.Refresh();
+#endif
         }
 
 
