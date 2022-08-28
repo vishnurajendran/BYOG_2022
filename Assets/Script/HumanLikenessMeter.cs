@@ -16,7 +16,7 @@ public class HumanLikenessMeter : MonoBehaviour
     {
         if (routine != null)
             StopCoroutine(routine);
-        percValue.text = $"Human Likeness: {(int)(perc * 100f)}%";
+        percValue.text = $"Radio Strength: {(int)(perc * 100f)}%";
         routine = StartCoroutine(PercSetterRoutine(perc));
     }
 

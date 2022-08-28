@@ -137,7 +137,6 @@ public class GameSystem : MonoBehaviour
 
     private void ActivateInputField()
     {
-        keyFaker.enabled = true;
         keyboardActive = true;
         inputField.text = string.Empty;
         inputField.ActivateInputField();
@@ -152,7 +151,6 @@ public class GameSystem : MonoBehaviour
         inputField.ReleaseSelection();
         if (!keyboardActive)
             return;
-        keyFaker.enabled = false;
         keyboardActive = false;
         OnUserSubmittedAnswer?.Invoke(text);
         inputField.text = "";
