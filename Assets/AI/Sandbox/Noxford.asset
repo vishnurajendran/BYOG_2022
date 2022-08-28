@@ -16,7 +16,6 @@ MonoBehaviour:
   db:
   - {fileID: 4900000, guid: 777cda23ad8f41508a0af657397f4a84, type: 3}
   - {fileID: 4900000, guid: 48528facc4894fac9472a2f8f94313e3, type: 3}
-  - {fileID: 4900000, guid: 48528facc4894fac9472a2f8f94313e3, type: 3}
   - {fileID: 4900000, guid: 66d59616348554ed5b10def53e80d45b, type: 3}
   - {fileID: 4900000, guid: 63eec6862a6574a4fb7ee3834e49ba2b, type: 3}
   - {fileID: 4900000, guid: 8d739f2a0830b47c3acf4f15e5a2255b, type: 3}

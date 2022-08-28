@@ -3383,14 +3383,19 @@ MonoBehaviour:
       forThisWeight:
       - One
       - 1
-    unexpectedKeyWords:
-    - Weight: 0.84
-      forThisWeight:
       - Two
       - 2
-    questionThreadA: 12
-    questionThreadB: 12
-    questionThreadC: 13
+    unexpectedKeyWords:
+    - Weight: 0.8
+      forThisWeight:
+      - Dont
+      - No
+    - Weight: 0.6
+      forThisWeight:
+      - Know
+    questionThreadA: -3
+    questionThreadB: -3
+    questionThreadC: 12
     questionThreadD: 1
     oxford: {fileID: 0}
   - phrases:
@@ -3399,16 +3404,6 @@ MonoBehaviour:
     - Weight: 0.4
       forThisWeight:
       - Yes
-      - donkey
-    - Weight: 0.4
-      forThisWeight:
-      - horn
-      - horns
-    - Weight: 0.2
-      forThisWeight:
-      - magical
-      - mythical
-      - magic
     unexpectedKeyWords: []
     questionThreadA: 14
     questionThreadB: 14
@@ -3425,7 +3420,7 @@ MonoBehaviour:
     questionThreadA: 14
     questionThreadB: 14
     questionThreadC: 14
-    questionThreadD: 4
+    questionThreadD: 1
     oxford: {fileID: 0}
   - phrases:
     - do you believe that god exists
@@ -3433,11 +3428,14 @@ MonoBehaviour:
     - Weight: 0.863
       forThisWeight:
       - Yes
-    unexpectedKeyWords: []
+    unexpectedKeyWords:
+    - Weight: 0.866
+      forThisWeight:
+      - No
     questionThreadA: 9999
     questionThreadB: 9999
     questionThreadC: 9999
-    questionThreadD: 9999
+    questionThreadD: 1
     oxford: {fileID: 0}
   noxford: {fileID: 11400000, guid: 58f253b6b7840464b8739e6edac31e9c, type: 2}
   keyFaker: {fileID: 1882067383}
@@ -4211,8 +4209,8 @@ RectTransform:
   m_Father: {fileID: 228581873}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 771.02, y: 0}
   m_Pivot: {x: 0, y: 1}
@@ -4314,7 +4312,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 25, y: 25, z: 25, w: 25}
+  m_margin: {x: 25, y: 25, z: 25, w: 100}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0

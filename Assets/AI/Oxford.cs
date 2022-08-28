@@ -73,7 +73,8 @@ namespace AI
                 var text = textAsset.text;
 
                 var synonyms = JsonConvert.DeserializeObject<SynonymList>(text);
-                synonymDictionary.Add(word, synonyms.synonyms);
+                if(!synonymDictionary.ContainsKey(word))
+                    synonymDictionary.Add(word, synonyms.synonyms);
             }
         }
 

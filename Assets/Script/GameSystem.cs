@@ -95,6 +95,14 @@ public class GameSystem : MonoBehaviour
             return;
         }
 
+        if (questionID == -3)
+        { 
+            PlayerPrefs.SetInt("ENDING_TYPE", 0);
+            PlayerPrefs.SetString("ENDING_BAD_SUMMARY", "Subjects has attempted an answer to the trolley problem, showing signs of the machine ways \n Pass and detain her for further research");
+            SceneManager.LoadScene("End");
+            return;
+        }
+
         currQuestion = questionList[questionID];
         phraseID = 0;
     }
