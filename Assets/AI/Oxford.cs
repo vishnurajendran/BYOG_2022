@@ -34,9 +34,16 @@ namespace AI
 
         public TextAsset[] db;
 
+        [Header("For jsons")]
         public SynonymList debugTransferToJson;
         [TextArea] public string outputJson;
 
+
+        [Header("For Testing distance values")]
+        public string wrongSpelling;
+        public string actualSpelling;
+        
+        
         [ContextMenu("Copy json")]
         private void CopyToOutput()
         {
@@ -44,6 +51,11 @@ namespace AI
         }
 
 
+        [ContextMenu("Test difference")]
+        private void TestDifference()
+        {
+            Extensions.CalculateSimilarity(wrongSpelling, actualSpelling);
+        }
 
         public void Init()
         {
@@ -61,8 +73,10 @@ namespace AI
 
         public string[] GetSynonyms(string word)
         {
+            Debug.Log($"Getting synonyms!!");
             if (synonymDictionary.ContainsKey(word))
             {
+                Debug.Log($"Got {JsonConvert.SerializeObject(synonymDictionary[word].ToArray())}");
                 return synonymDictionary[word].ToArray();
             }
 
@@ -71,10 +85,12 @@ namespace AI
             {
                 if (Extensions.CalculateSimilarity(key, word))
                 {
+                    Debug.Log($"Got {JsonConvert.SerializeObject(synonymDictionary[key].ToArray())}");
                     return synonymDictionary[key].ToArray();
                 }
             }
 
+            Debug.LogError($"No synonyms!!");
             return new string[] { };
         }
         
@@ -197,7 +213,8 @@ namespace AI
             if (source == target) return true;
 
             int stepsToSame = LevenshteinDistance(source, target);
-            return (1.0 - ((double)stepsToSame / (double)Math.Max(source.Length, target.Length))) > 0.8f;
+            Debug.Log($"{source}....{target} => Sim % = {(1.0 - ((double)stepsToSame / (double)Math.Max(source.Length, target.Length)))}");
+            return (1.0 - ((double)stepsToSame / (double)Math.Max(source.Length, target.Length))) > 0.75f;
         }
     }
 }

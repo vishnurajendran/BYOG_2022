@@ -19,6 +19,7 @@ MonoBehaviour:
   adverbs: []
   db:
   - {fileID: 4900000, guid: 777cda23ad8f41508a0af657397f4a84, type: 3}
+  - {fileID: 4900000, guid: 48528facc4894fac9472a2f8f94313e3, type: 3}
   debugTransferToJson:
     synonyms:
     - good
@@ -27,3 +28,5 @@ MonoBehaviour:
     - correct
     - nice
   outputJson: '{"synonyms":["good","great","fine","correct","nice"]}'
+  wrongSpelling: ava
+  actualSpelling: avaa

@@ -17,6 +17,40 @@ public class Question
     public int questionThreadD;
 
     [HideInInspector]public Oxford oxford;
+
+    public void Init(Oxford op)
+    {
+        oxford = op;
+        foreach (var weightedResponse in expectedKeyWords)
+        {
+            foreach (var word in weightedResponse.forThisWeight)
+            {
+                var syns = op.GetSynonyms(word);
+                foreach (var possibleSyn in syns)
+                {
+                    if (!weightedResponse.forThisWeight.Contains(possibleSyn))
+                    {
+                        weightedResponse.forThisWeight.Add(possibleSyn);
+                    }
+                }
+            }
+        }
+        
+        foreach (var weightedResponse in unexpectedKeyWords)
+        {
+            foreach (var word in weightedResponse.forThisWeight)
+            {
+                var syns = op.GetSynonyms(word);
+                foreach (var possibleSyn in syns)
+                {
+                    if (!weightedResponse.forThisWeight.Contains(possibleSyn))
+                    {
+                        weightedResponse.forThisWeight.Add(possibleSyn);
+                    }
+                }
+            }
+        }
+    }
     public bool DoesItExistInExpected(string wordToCheck, out float weight, out bool isGibberish)
     {
         //direct check

@@ -83,7 +83,7 @@ public class GameSystem : MonoBehaviour
     private void Start()
     {
         noxford.Init();
-        questionList.ForEach(x => x.oxford = noxford);
+        questionList.ForEach(x => x.Init(noxford));
         currQuestion = questionList[questionID];
         inputField.onSubmit.AddListener(OnSubmit);
         NextPhrase();
