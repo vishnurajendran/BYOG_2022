@@ -1,0 +1,5 @@
+- Expected Answer
+    - Contains the "answer"
+    - Contains priority of words
+    - Each word has a weight assigned to it
+    - If firs

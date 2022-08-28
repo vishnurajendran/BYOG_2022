@@ -9,6 +9,7 @@ public class MenuController : MonoBehaviour
     
     [SerializeField] AudioClip sfx;
     [SerializeField] Transform buttonParent;
+    [SerializeField] Transform prologueParent;
     [SerializeField] TitleAnimator titleAnimator;
 
     [SerializeField, TextArea(minLines: 3,maxLines:15)] string credits;
@@ -83,13 +84,17 @@ public class MenuController : MonoBehaviour
         }
         else
         {
-            titleAnimator.Animate(startingText, rickRoll: false, onComplete: () =>
-            {
-                PlayerPrefs.SetInt(PREF_KEY, 1);
-                SceneManager.LoadScene("Game");
-            });
+            StartCoroutine(WaitAndSetPref());
         }
-        
+    }
+
+    IEnumerator WaitAndSetPref() 
+    {
+        prologueParent.gameObject.SetActive(true);
+        titleAnimator.StopAnim();
+        yield return new WaitForSeconds(80);
+        PlayerPrefs.SetInt(PREF_KEY, 1);
+        SceneManager.LoadScene("Game");
     }
 
     public void Exit()

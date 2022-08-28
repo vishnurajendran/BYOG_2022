@@ -33,6 +33,8 @@ public class GameSystem : MonoBehaviour
     private int phraseID = -1;
     private Question currQuestion;
 
+    private int currentThreadId;
+
     Coroutine logOpenRoutine;
 
     public void NextPhrase()
@@ -48,7 +50,28 @@ public class GameSystem : MonoBehaviour
 
     void NextQuestion() 
     {
-        questionID++;
+        if (currentThreadId == 1)
+        {
+            questionID = currQuestion.questionThreadA;
+        }
+        else if (currentThreadId == 2)
+        { 
+            questionID = currQuestion.questionThreadB;
+        }
+        else if (currentThreadId == 3)
+        { 
+            questionID = currQuestion.questionThreadC;
+        }
+        else if (currentThreadId == 4)
+        { 
+            questionID = currQuestion.questionThreadD;
+        }
+
+        if (questionID < 0)
+        { 
+            //Game over
+        }
+
         currQuestion = questionList[questionID];
         phraseID = 0;
     }
@@ -105,6 +128,12 @@ public class GameSystem : MonoBehaviour
         AddToLog(string.Format(myDudeLog, Application.platform, text));
         SetLikenessMeter(Random.Range(0, 1f));
         NextPhrase();
+    }
+
+    public void TestThread(int threadIndex) 
+    {
+        currentThreadId = threadIndex;
+        OnSubmit("a");
     }
 
     private void AddToLog(string str)

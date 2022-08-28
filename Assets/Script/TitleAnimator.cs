@@ -77,4 +77,9 @@ public class TitleAnimator : MonoBehaviour
         onComplete?.Invoke();
     }
 
+    public void StopAnim()
+    {
+        titleText.gameObject.SetActive(false);
+    }
+
 }
