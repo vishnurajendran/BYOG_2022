@@ -38,6 +38,9 @@ public class TitleAnimator : MonoBehaviour
 
     private IEnumerator AnimateAsTitle(string text, System.Action onComplete=null)
     {
+        if (string.IsNullOrEmpty(text))
+            yield break;
+
         var split = text.Split("\n");
         titles = new List<string>();
         foreach (var s in split)
@@ -47,6 +50,8 @@ public class TitleAnimator : MonoBehaviour
                 titles.Add(s1);
 
         }
+        if (text.Length <= 0)
+            yield break;
 
         titleText.text = "";
         int indx = 0;
