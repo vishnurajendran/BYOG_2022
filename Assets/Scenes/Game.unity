@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028305, g: 0.22571313, b: 0.3069213, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -356,7 +356,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Press Enter/Return Continue.
+  m_text: Press E to continue.
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: b802978bd8e43e346bc7f01b868d6c64, type: 2}
   m_sharedMaterial: {fileID: -4814365446687430403, guid: b802978bd8e43e346bc7f01b868d6c64,
@@ -3159,15 +3159,12 @@ MonoBehaviour:
       - fine
       - good
       - great
-    - Weight: 0.3
+    - Weight: 0.4
       forThisWeight:
       - Me
       - I
       - Self
-      - I'm
-    - Weight: 0.1
-      forThisWeight:
-      - am
+      - im
     unexpectedKeyWords:
     - Weight: 0.6
       forThisWeight: []
@@ -4051,8 +4048,8 @@ RectTransform:
   m_Father: {fileID: 228581873}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 771.02, y: 0}
   m_Pivot: {x: 0, y: 1}

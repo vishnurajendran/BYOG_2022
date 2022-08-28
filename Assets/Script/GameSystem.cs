@@ -53,19 +53,19 @@ public class GameSystem : MonoBehaviour
 
     void NextQuestion() 
     {
-        if (currentThreadId == 1)
+        if (currentThreadId == 0)
         {
             questionID = currQuestion.questionThreadA;
         }
-        else if (currentThreadId == 2)
+        else if (currentThreadId == 1)
         { 
             questionID = currQuestion.questionThreadB;
         }
-        else if (currentThreadId == 3)
+        else if (currentThreadId == 2)
         { 
             questionID = currQuestion.questionThreadC;
         }
-        else if (currentThreadId == 4)
+        else if (currentThreadId == 3)
         { 
             questionID = currQuestion.questionThreadD;
         }
@@ -138,12 +138,6 @@ public class GameSystem : MonoBehaviour
         NextPhrase();
     }
 
-    public void TestThread(int threadIndex) 
-    {
-        currentThreadId = threadIndex;
-        OnSubmit("a");
-    }
-
     private void AddToLog(string str)
     {
         log.text += str + "\n";
@@ -173,7 +167,7 @@ public class GameSystem : MonoBehaviour
             logOpenRoutine = StartCoroutine(LerpLogPanel(showLog));
         }
 
-        if (Input.GetKeyDown(KeyCode.Return) && !keyboardActive)
+        if (Input.GetKeyDown(KeyCode.E) && !keyboardActive)
         {
             NextPhrase();
         }
