@@ -3152,37 +3152,47 @@ MonoBehaviour:
     - I'm Art vandalay, Head of Machine Intelligence Audit And Regulation
     - Nice to meet you
     - How are you doing today?
+    flawlessAnswer: I'm fine
     questionThreadA: 2
     questionThreadB: 1
     questionThreadC: -1
     questionThreadD: 0
+    oxford: {fileID: 0}
   - phrases:
     - I had trouble understanding that,
     - Please try to keep the conversation in english
     - Lets continue with a simpler question,
     - Batman or Superman ?
+    flawlessAnswer: 
     questionThreadA: -1
     questionThreadB: -1
     questionThreadC: -1
     questionThreadD: 0
+    oxford: {fileID: 0}
   - phrases:
     - Whats your name
+    flawlessAnswer: 
     questionThreadA: 3
     questionThreadB: 4
     questionThreadC: 0
     questionThreadD: 0
+    oxford: {fileID: 0}
   - phrases:
     - Whats your age
+    flawlessAnswer: 
     questionThreadA: 4
     questionThreadB: 0
     questionThreadC: 0
     questionThreadD: 0
+    oxford: {fileID: 0}
   - phrases:
     - Whats your age
+    flawlessAnswer: 
     questionThreadA: 4
     questionThreadB: 2
     questionThreadC: 0
     questionThreadD: 0
+    oxford: {fileID: 0}
   failSafeResponseList:
   - Anyway, lets go ahead with the test
   - Moving on,
