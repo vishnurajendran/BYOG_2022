@@ -96,7 +96,7 @@ namespace AI
                 }
             }
 
-            Debug.LogError($"No synonyms for {word}!!");
+            //Debug.LogError($"No synonyms for {word}!!");
             return new string[] { };
         }
         
