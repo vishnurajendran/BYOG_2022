@@ -166,6 +166,6 @@ public class Question
 [Serializable]
 public class WeightedResponse
 {
-    public float Weight;
+    [Range(0,1f)]public float Weight;
     public List<string> forThisWeight;
 }
