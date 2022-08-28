@@ -16,12 +16,31 @@ MonoBehaviour:
   db:
   - {fileID: 4900000, guid: 777cda23ad8f41508a0af657397f4a84, type: 3}
   - {fileID: 4900000, guid: 48528facc4894fac9472a2f8f94313e3, type: 3}
-  fileName: unicorn
+  - {fileID: 4900000, guid: 48528facc4894fac9472a2f8f94313e3, type: 3}
+  - {fileID: 4900000, guid: 66d59616348554ed5b10def53e80d45b, type: 3}
+  - {fileID: 4900000, guid: 63eec6862a6574a4fb7ee3834e49ba2b, type: 3}
+  - {fileID: 4900000, guid: 8d739f2a0830b47c3acf4f15e5a2255b, type: 3}
+  - {fileID: 4900000, guid: 777cda23ad8f41508a0af657397f4a84, type: 3}
+  - {fileID: 4900000, guid: c76a228c432d247c1ab0bcfa991d5031, type: 3}
+  - {fileID: 4900000, guid: fdbe47580d1cf493d9df7e28872a971a, type: 3}
+  - {fileID: 4900000, guid: c3175de64578542a88d30e8977341401, type: 3}
+  - {fileID: 4900000, guid: 3ed4d90ee41464e31bd12553d70318fb, type: 3}
+  - {fileID: 4900000, guid: 489568d3f67bc4f69b8b1e23fd762420, type: 3}
+  - {fileID: 4900000, guid: d0702164494e34fd4a94b0f321f7d694, type: 3}
+  - {fileID: 4900000, guid: 53818a159ad4c4a27839a13348d1c9fb, type: 3}
+  - {fileID: 4900000, guid: 90c686e2d52234df1aa925929bf03881, type: 3}
+  - {fileID: 4900000, guid: 8c5138243488f49799e0e5d84ae3b497, type: 3}
+  - {fileID: 4900000, guid: 6807d1dbc889f4afdae6b990a182464f, type: 3}
+  - {fileID: 4900000, guid: 12cfa06742f8e4c4eaed573fa8e598ab, type: 3}
+  - {fileID: 4900000, guid: 99a08bd8621c94e1693d64cdbcba20b8, type: 3}
+  fileName: two
   debugTransferToJson:
     synonyms:
-    - horse
-    - donkey
-    - gadha
-  outputJson: '{"synonyms":["horse","donkey","gadha"]}'
+    - two
+    - dos
+    - 2
+    - twoo
+    - ttwwo
+  outputJson: '{"synonyms":["two","dos","2","twoo","ttwwo"]}'
   wrongSpelling: ava
   actualSpelling: avaa

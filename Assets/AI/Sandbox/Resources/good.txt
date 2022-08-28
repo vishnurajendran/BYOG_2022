@@ -1,1 +1,1 @@
-{"synonyms":["good","great","fine","correct","nice"]}
+{"synonyms":["pleasing","superb","correct","okay","ok"]}
