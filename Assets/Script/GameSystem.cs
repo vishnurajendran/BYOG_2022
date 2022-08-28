@@ -132,7 +132,7 @@ public class GameSystem : MonoBehaviour
                 ShowContinuePrompt();
         });
 
-        AddToLog(string.Format(otherDudeLog, Application.platform, phrase));
+        AddToLog(string.Format(otherDudeLog, "Art", phrase));
     }
 
     private void ActivateInputField()
@@ -156,7 +156,7 @@ public class GameSystem : MonoBehaviour
         keyboardActive = false;
         OnUserSubmittedAnswer?.Invoke(text);
         inputField.text = "";
-        AddToLog(string.Format(myDudeLog, Application.platform, text));
+        AddToLog(string.Format(myDudeLog, "Ava", text));
         SetLikenessMeter(Random.Range(0, 1f));
         NextPhrase();
     }
