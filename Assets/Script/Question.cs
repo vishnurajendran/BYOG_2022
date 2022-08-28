@@ -1,12 +1,13 @@
 using System.Collections.Generic;
 using System;
 using AI;
+using UnityEngine;
 
 [Serializable]
 public class Question
 {
     public List<string> phrases;
-    public string flawlessAnswer;
+    [Obsolete] public string flawlessAnswer;
     public List<WeightedResponse> expectedKeyWords;
     public List<WeightedResponse> unexpectedKeyWords;
 
@@ -15,7 +16,7 @@ public class Question
     public int questionThreadC;
     public int questionThreadD;
 
-    public Oxford oxford;
+    [HideInInspector]public Oxford oxford;
     public bool DoesItExistInExpected(string wordToCheck, out float weight, out bool isGibberish)
     {
         //direct check
@@ -89,6 +90,7 @@ public class Question
         return false;
     }
 }
+[Serializable]
 public class WeightedResponse
 {
     public float Weight;

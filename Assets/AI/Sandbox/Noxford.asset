@@ -17,3 +17,13 @@ MonoBehaviour:
   allWordsForPossibility: []
   articles: []
   adverbs: []
+  db:
+  - {fileID: 4900000, guid: 777cda23ad8f41508a0af657397f4a84, type: 3}
+  debugTransferToJson:
+    synonyms:
+    - good
+    - great
+    - fine
+    - correct
+    - nice
+  outputJson: '{"synonyms":["good","great","fine","correct","nice"]}'

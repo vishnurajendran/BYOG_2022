@@ -3153,10 +3153,28 @@ MonoBehaviour:
     - Nice to meet you
     - How are you doing today?
     flawlessAnswer: I'm fine
+    expectedKeyWords:
+    - Weight: 0.6
+      forThisWeight:
+      - fine
+      - good
+      - great
+    - Weight: 0.3
+      forThisWeight:
+      - Me
+      - I
+      - Self
+      - I'm
+    - Weight: 0.1
+      forThisWeight:
+      - am
+    unexpectedKeyWords:
+    - Weight: 0.6
+      forThisWeight: []
     questionThreadA: 2
     questionThreadB: 1
     questionThreadC: -1
-    questionThreadD: 0
+    questionThreadD: 1
     oxford: {fileID: 11400000, guid: 58f253b6b7840464b8739e6edac31e9c, type: 2}
   - phrases:
     - I had trouble understanding that,
@@ -3164,6 +3182,8 @@ MonoBehaviour:
     - Lets continue with a simpler question,
     - Batman or Superman ?
     flawlessAnswer: 
+    expectedKeyWords: []
+    unexpectedKeyWords: []
     questionThreadA: -1
     questionThreadB: -1
     questionThreadC: -1
@@ -3172,6 +3192,8 @@ MonoBehaviour:
   - phrases:
     - Whats your name
     flawlessAnswer: 
+    expectedKeyWords: []
+    unexpectedKeyWords: []
     questionThreadA: 3
     questionThreadB: 4
     questionThreadC: 0
@@ -3180,6 +3202,8 @@ MonoBehaviour:
   - phrases:
     - Whats your age
     flawlessAnswer: 
+    expectedKeyWords: []
+    unexpectedKeyWords: []
     questionThreadA: 4
     questionThreadB: 0
     questionThreadC: 0
@@ -3188,6 +3212,8 @@ MonoBehaviour:
   - phrases:
     - Whats your age
     flawlessAnswer: 
+    expectedKeyWords: []
+    unexpectedKeyWords: []
     questionThreadA: 4
     questionThreadB: 2
     questionThreadC: 0
@@ -3197,6 +3223,7 @@ MonoBehaviour:
   - Anyway, lets go ahead with the test
   - Moving on,
   - Interesting choice of words
+  noxford: {fileID: 11400000, guid: 58f253b6b7840464b8739e6edac31e9c, type: 2}
   keyFaker: {fileID: 1882067383}
   liknessMeter: {fileID: 1061980925}
   textAnimator: {fileID: 1596997147}

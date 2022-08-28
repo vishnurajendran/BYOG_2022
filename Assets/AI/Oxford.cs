@@ -13,12 +13,12 @@ namespace AI
         public List<string> synonyms;
     }
 
-    public enum ResponeType
+    public enum RespondType
     {
-        Flawless,
-        Flawed,
-        NegativeResponse,
-        Gibberish
+        Flawless = 0,
+        Flawed = 1,
+        NegativeResponse = 2,
+        Gibberish = 3
     }
     
     [CreateAssetMenu(fileName = "Noxford", menuName = "BYOG/Noxford", order = 0)]
@@ -32,12 +32,25 @@ namespace AI
 
         private Dictionary<string, List<string>> synonymDictionary;
 
+        public TextAsset[] db;
+
+        public SynonymList debugTransferToJson;
+        [TextArea] public string outputJson;
+
+        [ContextMenu("Copy json")]
+        private void CopyToOutput()
+        {
+            outputJson = JsonConvert.SerializeObject(debugTransferToJson);
+        }
+
+
+
         public void Init()
         {
             synonymDictionary = new Dictionary<string, List<string>>();
-            var db = Resources.FindObjectsOfTypeAll<TextAsset>();
             foreach (var textAsset in db)
             {
+                
                 var word = textAsset.name;
                 var text = textAsset.text;
 
@@ -65,13 +78,8 @@ namespace AI
             return new string[] { };
         }
         
-        public ResponeType GetSimilarityIndex(string receivedAnswer, Question expectedPara)
+        public RespondType GetSimilarityIndex(string receivedAnswer, Question expectedPara)
         {
-            if (receivedAnswer == expectedPara.flawlessAnswer)
-            {
-                return ResponeType.Flawless;
-            }
-
             var recWords = receivedAnswer.Split(" ").ToList();
 
             float similarityScore = 0;
@@ -86,13 +94,13 @@ namespace AI
             switch (similarityScore)
             {
                 case >= 0.8f:
-                    return ResponeType.Flawless;
+                    return RespondType.Flawless;
                 case >= 0.5f:
-                    return ResponeType.Flawed;
+                    return RespondType.Flawed;
                 case >= 0:
-                    return ResponeType.Gibberish;
+                    return RespondType.Gibberish;
                 default:
-                    return ResponeType.NegativeResponse;
+                    return RespondType.NegativeResponse;
             }
         }
 

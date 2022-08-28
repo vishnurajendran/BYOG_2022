@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using AI;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -9,6 +10,8 @@ public class GameSystem : MonoBehaviour
     public List<string> failSafeResponseList;
     const int leftOffset = -765;
 
+    public Oxford noxford;
+    
     const string otherDudeLog = "{0}: {1}\n";
     const string myDudeLog = "{0}: {1}\n";
 
@@ -36,7 +39,7 @@ public class GameSystem : MonoBehaviour
     private int currentThreadId;
 
     Coroutine logOpenRoutine;
-
+    
     public void NextPhrase()
     {
         phraseID++;
@@ -79,6 +82,8 @@ public class GameSystem : MonoBehaviour
     // Start is called before the first frame update
     private void Start()
     {
+        noxford.Init();
+        questionList.ForEach(x => x.oxford = noxford);
         currQuestion = questionList[questionID];
         inputField.onSubmit.AddListener(OnSubmit);
         NextPhrase();
@@ -117,6 +122,9 @@ public class GameSystem : MonoBehaviour
 
     private void OnSubmit(string text)
     {
+        var responeType = noxford.GetSimilarityIndex(text, currQuestion);
+        Debug.Log($"Response type = {responeType}");
+        currentThreadId = (int)responeType;
         inputField.DeactivateInputField();
         inputField.ReleaseSelection();
         if (!keyboardActive)
