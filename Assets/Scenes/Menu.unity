@@ -238,8 +238,6 @@ MonoBehaviour:
 
     Turing Test.
 
-    Blade Runner.
-
     Voight-Kampff.'
 --- !u!4 &24012785
 Transform:
@@ -696,7 +694,12 @@ MonoBehaviour:
 
     we had none
 
-    A game made for BYOG 22'
+    QA
+
+    we need none
+
+    A
+    game made for BYOG 22'
   howToPlay: 'How to play
 
     Use the keyboard to Play
