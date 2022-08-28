@@ -1,1 +1,1 @@
-{"synonyms":["unhappy","depressed","death","gloomy","glum","died","traumatic","suicide","suicidal"]}
+{"synonyms":["unhappy","depressed","death","gloomy","glum","died","traumatic","suicide","suicidal","beating","drunk"]}

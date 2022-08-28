@@ -1,1 +1,3 @@
-{"synonyms":["pleased","please","delight","delighted","glad","blessed","cheerful","cheer","jolly","merry","joy","joyful","blissful"]}
+{"synonyms":["pleased","please","delight","delighted","glad","blessed","cheerful","cheer","jolly","merry","joy","joyful","blissful","trip","play","cricket","ice",
+"icecream","cream","date","first","crush","memory","flower","rose","playground", "ball","football","games","csgo", "fortnite","shaktimaan","memories","bicycle",
+"gift","clothes","igi","festival","holi","diwali","eid","christmas","money","salary","earn","friends","friend"]}
