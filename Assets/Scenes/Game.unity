@@ -224,7 +224,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Subect: Ava'
+  m_text: 'Subject: <color=yellow>Ava</color>'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: b802978bd8e43e346bc7f01b868d6c64, type: 2}
   m_sharedMaterial: {fileID: -4814365446687430403, guid: b802978bd8e43e346bc7f01b868d6c64,
@@ -3115,11 +3115,12 @@ MonoBehaviour:
     - Nice to meet you
     - How are you doing today?
     expectedKeyWords:
-    - Weight: 0.6
+    - Weight: 1
       forThisWeight:
       - fine
       - good
       - great
+      - awesome
     - Weight: 0.4
       forThisWeight:
       - Me
@@ -3248,7 +3249,7 @@ MonoBehaviour:
     oxford: {fileID: 0}
   - phrases:
     - Since we are past introductions now, lets begin the actual test
-    - Not passing this test would mean prison time for you and your time entire family
+    - Not passing this test would mean prison time for you and your entire family
     - No pressure, kiddo
     - For the first question,
     - Using the first words that come to your mind, describe your childhood
@@ -3337,20 +3338,25 @@ MonoBehaviour:
   - phrases:
     - do you believe that unicorn exists
     expectedKeyWords:
-    - Weight: 0.4
+    - Weight: 0.79
       forThisWeight:
       - Yes
-      - donkey
-    - Weight: 0.4
+    - Weight: 0.845
       forThisWeight:
       - horn
       - horns
-    - Weight: 0.2
+    - Weight: 0.824
       forThisWeight:
       - magical
       - mythical
       - magic
-    unexpectedKeyWords: []
+    unexpectedKeyWords:
+    - Weight: 0.813
+      forThisWeight:
+      - no
+      - nay
+      - Nada
+      - n
     questionThreadA: -2
     questionThreadB: -2
     questionThreadC: 11
@@ -3373,20 +3379,15 @@ MonoBehaviour:
     - 2 .Pull the lever, diverting the trolley onto the side track where it will
       kill one person.
     expectedKeyWords:
-    - Weight: 0.4
+    - Weight: 0.892
       forThisWeight:
-      - Yes
-      - donkey
-    - Weight: 0.4
+      - One
+      - 1
+    unexpectedKeyWords:
+    - Weight: 0.84
       forThisWeight:
-      - horn
-      - horns
-    - Weight: 0.2
-      forThisWeight:
-      - magical
-      - mythical
-      - magic
-    unexpectedKeyWords: []
+      - Two
+      - 2
     questionThreadA: 12
     questionThreadB: 12
     questionThreadC: 13
@@ -3420,16 +3421,6 @@ MonoBehaviour:
     - Weight: 0.4
       forThisWeight:
       - Yes
-      - donkey
-    - Weight: 0.4
-      forThisWeight:
-      - horn
-      - horns
-    - Weight: 0.2
-      forThisWeight:
-      - magical
-      - mythical
-      - magic
     unexpectedKeyWords: []
     questionThreadA: 14
     questionThreadB: 14
@@ -3439,41 +3430,9 @@ MonoBehaviour:
   - phrases:
     - do you believe that god exists
     expectedKeyWords:
-    - Weight: 0.4
+    - Weight: 0.863
       forThisWeight:
       - Yes
-      - donkey
-    - Weight: 0.4
-      forThisWeight:
-      - horn
-      - horns
-    - Weight: 0.2
-      forThisWeight:
-      - magical
-      - mythical
-      - magic
-    unexpectedKeyWords: []
-    questionThreadA: 9999
-    questionThreadB: 9999
-    questionThreadC: 9999
-    questionThreadD: 9999
-    oxford: {fileID: 0}
-  - phrases:
-    - do you believe that god exists
-    expectedKeyWords:
-    - Weight: 0.4
-      forThisWeight:
-      - Yes
-      - donkey
-    - Weight: 0.4
-      forThisWeight:
-      - horn
-      - horns
-    - Weight: 0.2
-      forThisWeight:
-      - magical
-      - mythical
-      - magic
     unexpectedKeyWords: []
     questionThreadA: 9999
     questionThreadB: 9999
@@ -4252,8 +4211,8 @@ RectTransform:
   m_Father: {fileID: 228581873}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 771.02, y: 0}
   m_Pivot: {x: 0, y: 1}
