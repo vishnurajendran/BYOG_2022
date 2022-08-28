@@ -17,6 +17,40 @@ public class Question
 
     [HideInInspector]public Oxford oxford;
 
+    private void ToLowerCase()
+    {
+        if (expectedKeyWords != null)
+        {
+            foreach (var weightSet in expectedKeyWords)
+            {
+                if (weightSet.forThisWeight != null)
+                {
+                    for (var i = 0; i < weightSet.forThisWeight.Count; i++)
+                    {
+                        weightSet.forThisWeight[i] = weightSet.forThisWeight[i].ToLower();
+                    }
+                }
+            }
+        }
+
+        if (unexpectedKeyWords != null)
+        {
+            foreach (var weightSet in unexpectedKeyWords)
+            {
+                if (weightSet.forThisWeight != null)
+                {
+                    for (var i = 0; i < weightSet.forThisWeight.Count; i++)
+                    {
+                        weightSet.forThisWeight[i] = weightSet.forThisWeight[i].ToLower();
+                    }
+                }
+            }
+        }
+    }
+    private void OnValidate()
+    {
+        ToLowerCase();
+    }
     public void Init(Oxford op)
     {
         oxford = op;
@@ -53,6 +87,8 @@ public class Question
             }
             weightedResponse.forThisWeight.AddRange(temp);
         }
+        
+        ToLowerCase();
     }
     public bool DoesItExistInExpected(string wordToCheck, out float weight, out bool isGibberish)
     {
