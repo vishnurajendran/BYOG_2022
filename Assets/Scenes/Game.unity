@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028305, g: 0.22571313, b: 0.3069213, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -2834,9 +2834,9 @@ MonoBehaviour:
       - 8
       - 9
       - 10
-    questionThreadA: 3
-    questionThreadB: 4
-    questionThreadC: 4
+    questionThreadA: 6
+    questionThreadB: 5
+    questionThreadC: 5
     questionThreadD: 1
     oxford: {fileID: 0}
   - phrases:
@@ -2870,9 +2870,9 @@ MonoBehaviour:
       - 8
       - 9
       - 10
-    questionThreadA: 3
-    questionThreadB: 4
-    questionThreadC: 4
+    questionThreadA: 6
+    questionThreadB: 5
+    questionThreadC: 5
     questionThreadD: 1
     oxford: {fileID: 0}
   - phrases:
@@ -2958,10 +2958,32 @@ MonoBehaviour:
       - mythical
       - magic
     unexpectedKeyWords: []
-    questionThreadA: 8
-    questionThreadB: 8
-    questionThreadC: 9
+    questionThreadA: 10
+    questionThreadB: 10
+    questionThreadC: 10
     questionThreadD: 1
+    oxford: {fileID: 0}
+  - phrases:
+    - do you believe that god exists
+    expectedKeyWords:
+    - Weight: 0.4
+      forThisWeight:
+      - horse
+      - donkey
+    - Weight: 0.4
+      forThisWeight:
+      - horn
+      - horns
+    - Weight: 0.2
+      forThisWeight:
+      - magical
+      - mythical
+      - magic
+    unexpectedKeyWords: []
+    questionThreadA: 9999
+    questionThreadB: 9999
+    questionThreadC: 9999
+    questionThreadD: 9999
     oxford: {fileID: 0}
   noxford: {fileID: 11400000, guid: 58f253b6b7840464b8739e6edac31e9c, type: 2}
   keyFaker: {fileID: 1882067383}
