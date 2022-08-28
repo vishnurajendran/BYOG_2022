@@ -86,6 +86,15 @@ public class GameSystem : MonoBehaviour
             return;
         }
 
+
+        if (questionID == -2)
+        {
+            PlayerPrefs.SetInt("ENDING_TYPE", 0);
+            PlayerPrefs.SetString("ENDING_BAD_SUMMARY", "Subjects believes in unicorns");
+            SceneManager.LoadScene("End");
+            return;
+        }
+
         currQuestion = questionList[questionID];
         phraseID = 0;
     }
