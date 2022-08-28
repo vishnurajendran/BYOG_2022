@@ -230,7 +230,11 @@ MonoBehaviour:
   - BYOG 2022
   - GG.
   defTime: 0.05
-  text: 'Y.A.T.A.
+  text: '[X]
+
+    [X] Test.
+
+    Y.A.T.A.
 
     Turing Test.
 
@@ -675,14 +679,34 @@ MonoBehaviour:
   titleAnimator: {fileID: 24012784}
   credits: 'Credits
 
+    Developers
+
     Avenger
 
     GodOfNoobs
 
-    WickedCube'
-  howToPlay: Fuck You!
+    WickedCube
+
+    Artists
+
+    we
+    had none
+
+    Audio designers
+
+    we had none
+
+    A game made for BYOG 22'
+  howToPlay: 'How to play
+
+    Use the keyboard to Play
+
+    Scroll through logs
+    using the scroll wheel
+
+    thats pretty much it.'
   startingText: Lets begin!
-  cleanPrefs: 1
+  cleanPrefs: 0
 --- !u!4 &260520846
 Transform:
   m_ObjectHideFlags: 0
