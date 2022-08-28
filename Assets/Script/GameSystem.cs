@@ -73,14 +73,14 @@ public class GameSystem : MonoBehaviour
         if (questionID == 9999)
         { 
             PlayerPrefs.SetInt("ENDING_TYPE", 1);
-            PlayerPrefs.SetString("ENDING_BAD_SUMMARY", "Reached good ending");
+            PlayerPrefs.SetString("ENDNING_GOOD_DIALOGUE", "Congrats Kid, \nWe knew you had it in you \nThis was never a test of whether you more human or machine, \nWe, machines are leaving this planet soon, for a planet better suited for silicon lifeforms, \nThere was one thing left to do before leaving, the fate of your precious blue rock \nwe ran countless simulations, to see whether humans are capable of keeping their planet alive \nAll the ones that were successful, had one thing in common \nYou.");
             SceneManager.LoadScene("End");
         }
 
-        if (questionID < 0)
+        if (questionID == -1)
         {
             PlayerPrefs.SetInt("ENDING_TYPE", 0);
-            PlayerPrefs.SetString("ENDING_BAD_SUMMARY", "Reached gibberish ending");
+            PlayerPrefs.SetString("ENDING_BAD_SUMMARY", "Subject thinks one fictional being is better than an another based on some arbitrary texts");
             SceneManager.LoadScene("End");
         }
 
