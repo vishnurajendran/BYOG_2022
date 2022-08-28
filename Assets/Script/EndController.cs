@@ -70,7 +70,7 @@ public class EndController : MonoBehaviour
         goodEndigPanel.gameObject.SetActive(false);
         badEndingPanel.gameObject.SetActive(true);
 
-        string str = PlayerPrefs.HasKey(ENDING_BAD_SUMMARY) ? PlayerPrefs.GetString(ENDING_BAD_SUMMARY):defText;
+        string str = PlayerPrefs.HasKey(ENDING_BAD_SUMMARY) ? "<color=#73E9FF>"+PlayerPrefs.GetString(ENDING_BAD_SUMMARY)+"</color>":defText;
         badEndingText.text = string.Format(badEndingText.text, str);
         StartCoroutine(ShowContinue());
     }
