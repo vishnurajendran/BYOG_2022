@@ -123,7 +123,7 @@ public class EndController : MonoBehaviour
         }
 
         yield return new WaitForEndOfFrame();
-        animator.Animate("Game Over\nThank you for playing :)", rickRoll: false, onComplete: () => {
+        animator.Animate("Simulation Over\nThank you for playing :)", rickRoll: false, onComplete: () => {
             SceneManager.LoadScene("Menu");
         });
 
