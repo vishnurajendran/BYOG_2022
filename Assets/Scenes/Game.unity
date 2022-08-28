@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028305, g: 0.22571313, b: 0.3069213, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -2767,7 +2767,7 @@ MonoBehaviour:
       forThisWeight: []
     questionThreadA: 2
     questionThreadB: 1
-    questionThreadC: -1
+    questionThreadC: 1
     questionThreadD: 1
     oxford: {fileID: 11400000, guid: 58f253b6b7840464b8739e6edac31e9c, type: 2}
   - phrases:
@@ -2781,42 +2781,98 @@ MonoBehaviour:
     questionThreadA: -1
     questionThreadB: -1
     questionThreadC: -1
-    questionThreadD: 0
+    questionThreadD: -1
     oxford: {fileID: 0}
   - phrases:
     - Whats your name
-    flawlessAnswer: 
+    flawlessAnswer: Ava
+    expectedKeyWords: []
+    unexpectedKeyWords: []
+    questionThreadA: 4
+    questionThreadB: 3
+    questionThreadC: 3
+    questionThreadD: 1
+    oxford: {fileID: 0}
+  - phrases:
+    - Sorry, thats not the data i have with me
+    - I'll repeat myself
+    - Whats your name
+    flawlessAnswer: Ava
+    expectedKeyWords: []
+    unexpectedKeyWords: []
+    questionThreadA: 4
+    questionThreadB: 3
+    questionThreadC: 3
+    questionThreadD: 1
+    oxford: {fileID: 0}
+  - phrases:
+    - Whats your age
+    flawlessAnswer: 18
     expectedKeyWords: []
     unexpectedKeyWords: []
     questionThreadA: 3
     questionThreadB: 4
-    questionThreadC: 0
-    questionThreadD: 0
+    questionThreadC: 4
+    questionThreadD: 1
     oxford: {fileID: 0}
   - phrases:
+    - Sorry, thats not the data i have with me
+    - I'll repeat myself
     - Whats your age
-    flawlessAnswer: 
+    flawlessAnswer: 18
     expectedKeyWords: []
     unexpectedKeyWords: []
-    questionThreadA: 4
-    questionThreadB: 0
-    questionThreadC: 0
-    questionThreadD: 0
+    questionThreadA: 3
+    questionThreadB: 4
+    questionThreadC: 4
+    questionThreadD: 1
     oxford: {fileID: 0}
   - phrases:
-    - Whats your age
-    flawlessAnswer: 
+    - Since we are past introductions now, lets begin the actual test
+    - Not passing this test would mean prison time for you and your time entire family
+    - No pressure, kiddo
+    - For the first question,
+    - Using the first words that come to your mind, describe your childhood
+    flawlessAnswer: 18
     expectedKeyWords: []
     unexpectedKeyWords: []
-    questionThreadA: 4
-    questionThreadB: 2
-    questionThreadC: 0
-    questionThreadD: 0
+    questionThreadA: 7
+    questionThreadB: 7
+    questionThreadC: 8
+    questionThreadD: 1
     oxford: {fileID: 0}
-  failSafeResponseList:
-  - Anyway, lets go ahead with the test
-  - Moving on,
-  - Interesting choice of words
+  - phrases:
+    - good to hear that
+    - describe one happy moment
+    flawlessAnswer: 18
+    expectedKeyWords: []
+    unexpectedKeyWords: []
+    questionThreadA: 9
+    questionThreadB: 9
+    questionThreadC: 8
+    questionThreadD: 1
+    oxford: {fileID: 0}
+  - phrases:
+    - Sorry!, made you remember it again
+    - describe one happy moment
+    flawlessAnswer: 18
+    expectedKeyWords: []
+    unexpectedKeyWords: []
+    questionThreadA: 9
+    questionThreadB: 9
+    questionThreadC: 8
+    questionThreadD: 1
+    oxford: {fileID: 0}
+  - phrases:
+    - Please describe a unicorn
+    flawlessAnswer: 18
+    expectedKeyWords: []
+    unexpectedKeyWords: []
+    questionThreadA: 8
+    questionThreadB: 8
+    questionThreadC: 9
+    questionThreadD: 1
+    oxford: {fileID: 0}
   noxford: {fileID: 11400000, guid: 58f253b6b7840464b8739e6edac31e9c, type: 2}
   keyFaker: {fileID: 1882067383}
   liknessMeter: {fileID: 1061980925}

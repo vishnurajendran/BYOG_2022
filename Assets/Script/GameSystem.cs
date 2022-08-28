@@ -2,12 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using AI;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class GameSystem : MonoBehaviour
 {
     public List<Question> questionList;
-    public List<string> failSafeResponseList;
     const int leftOffset = -765;
 
     public Oxford noxford;
@@ -70,9 +70,18 @@ public class GameSystem : MonoBehaviour
             questionID = currQuestion.questionThreadD;
         }
 
-        if (questionID < 0)
+        if (questionID == 9999)
         { 
-            //Game over
+            PlayerPrefs.SetInt("ENDING_TYPE", 1);
+            PlayerPrefs.SetString("ENDING_BAD_SUMMARY", "Reached good ending");
+            SceneManager.LoadScene("End");
+        }
+
+        if (questionID < 0)
+        {
+            PlayerPrefs.SetInt("ENDING_TYPE", 0);
+            PlayerPrefs.SetString("ENDING_BAD_SUMMARY", "Reached gibberish ending");
+            SceneManager.LoadScene("End");
         }
 
         currQuestion = questionList[questionID];
@@ -83,6 +92,8 @@ public class GameSystem : MonoBehaviour
     private void Start()
     {
         noxford.Init();
+        PlayerPrefs.SetInt("ENDING_TYPE", 0);
+        PlayerPrefs.DeleteKey("ENDING_BAD_SUMMARY");
         questionList.ForEach(x => x.Init(noxford));
         currQuestion = questionList[questionID];
         inputField.onSubmit.AddListener(OnSubmit);
